@@ -1,5 +1,11 @@
 Vidfo Player general clicks
 
+// Github Commit And Push
+git add .
+git commit -m "Describe your changes"
+git push
+
+
 
 //Clear abd
 adb shell pm clear io.appium.uiautomator2.server
