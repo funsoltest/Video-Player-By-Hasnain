@@ -15,6 +15,7 @@ public class PermissionCheck {
             return;
         }
         // Your logic to start the app
+        System.out.println("Else Case");
         System.out.println("StartApp() is executed.");
     }
 

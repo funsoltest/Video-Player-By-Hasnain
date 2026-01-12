@@ -43,6 +43,7 @@ public class ClearAppData {
         // Provide your device ID and app package
         String deviceId = "089082529U003239";
         String appPackage = "vidfo.video.player.videoplayer";
+        System.out.println("Device ID: " + deviceId + " App Package: " + appPackage) ;
 
         // Clear app data
         appDataClearer.clearAppData(deviceId, appPackage);
