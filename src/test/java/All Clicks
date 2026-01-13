@@ -104,3 +104,11 @@ Java
  //                .stream()
  //                .findFirst()
  //                .ifPresent(e -> e.click());
+
+
+Testng.xml -> Smoke, Regression Or Parallel Testing
+// https://claude.ai/public/artifacts/fac1601d-a457-4a69-b860-b4d04508d93d
+
+
+Parallel Testing
+// https://claude.ai/public/artifacts/8034bc53-984b-4ba6-afd0-1a7c4c67fa9e

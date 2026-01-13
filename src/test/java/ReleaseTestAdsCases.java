@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(ResultListener.class)
 public class ReleaseTestAdsCases extends VIDFO {
     @Test(priority = 1)
     public void SplashToHomeRelease() throws Exception {

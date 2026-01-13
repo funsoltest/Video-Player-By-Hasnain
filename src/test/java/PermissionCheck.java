@@ -1,3 +1,6 @@
+import org.testng.annotations.Listeners;
+
+@Listeners(ResultListener.class)
 public class PermissionCheck {
 
     private boolean isGenralPermissions1Executed = false; // Flag to track if genralPermissions1() was run

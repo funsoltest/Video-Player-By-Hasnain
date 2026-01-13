@@ -1,7 +1,11 @@
+import org.testng.annotations.Listeners;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
+
+@Listeners(ResultListener.class)
 public class ClearAppData {
 
     public void clearAppData(String deviceId, String appPackage) {

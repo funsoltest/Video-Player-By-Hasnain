@@ -1,30 +1,31 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 //import android.content.Context;
 //import android.content.SharedPreferences;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.List;
+import java.util.Date;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+
+@Listeners(ResultListener.class)
 public class VIDFO {
 
-    protected AndroidDriver driver;
+    public AndroidDriver driver;
     protected Dimension dim;
     protected boolean isFirstMethodExecuted = false;
 
@@ -46,6 +47,20 @@ public class VIDFO {
         dim = driver.manage().window().getSize();
 
         System.out.println(">>>> App Started Successfully");
+    }
+
+    //Screen Shot Kay Liay
+    public void takeScreenshot(String name) {
+        try {
+            String time = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File dest = new File("screenshots/" + name + "_" + time + ".png");
+            FileUtils.copyFile(src, dest);
+            System.out.println("Screenshot taken successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Screenshot taken failure");
+        }
     }
 
     // 🔹 New Function: Check First Launch

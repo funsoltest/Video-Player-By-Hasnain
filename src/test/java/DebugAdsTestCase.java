@@ -1,9 +1,12 @@
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 
+
+@Listeners(ResultListener.class)
 public class DebugAdsTestCase extends VIDFO {
 
     @Test(priority = 1)
@@ -45,13 +48,22 @@ public class DebugAdsTestCase extends VIDFO {
         System.out.println("=== Splash to Home Function End ===");
         Thread.sleep(500);
     }
+
+
     @AfterClass
+    public void afterAllTests() {
+        takeScreenshot("ALL_TESTS_FINISHED");
+    }
+
+    @AfterSuite
     public void CloseApp(){
         if (driver != null) {
             System.out.println("Closing Application");
             driver.quit();
         }
     }
+
+
 }
 
         // Example: click on ad if exists (replace with your actual locator)
