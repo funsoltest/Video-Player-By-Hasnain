@@ -112,3 +112,10 @@ Testng.xml -> Smoke, Regression Or Parallel Testing
 
 Parallel Testing
 // https://claude.ai/public/artifacts/8034bc53-984b-4ba6-afd0-1a7c4c67fa9e
+
+
+
+                mvn clean test -DsuiteXmlFile=testng.xml
+                bat 'mvn clean test -Dtest=PermissionTestCase'
+                bat 'mvn clean test -Dtest=LoginTest,UploadTest'
+
