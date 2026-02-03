@@ -21,7 +21,7 @@ public class Vidfo {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         dim = driver.manage().window().getSize();
         System.out.println("✅ App Started");
-        System.out.println("✅ App Started");
+
     }
 
     public AndroidDriver getDriver() {
